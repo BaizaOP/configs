@@ -35,31 +35,39 @@ Plug 'tpope/vim-commentary'
 Plug 'nanotech/jellybeans.vim'
 Plug 'markvincze/panda-vim'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
 " color panda " best color pallate EVER
 " NOT ANYMORE LOL
 color jellybeans
-""""""""""\ Status Line Settings /""""""""""""""""
-set statusline=              " start the status line
-set statusline+=%#DiffChange#  " the green color
-set statusline+=\ %M         " modified since last save
-set statusline+=\ %y         " type of file in []
-set statusline+=\            " another space at the end
-" set statusline+=\ %r       " read only flag -- adds a space I do not like
-set statusline+=%#WildMenu# " the orange color
-set statusline+=\            " Space
-set statusline+=\%f          " relative path to file
-" set statusline+=\%F          " full path to file
-set statusline+=\            " Space
-set statusline+=%#DiffChange#  " the green color
 
-"" The Right Side
-set statusline+=%=           " right side settings
-set statusline+=%#WildMenu#   " the orange color -- use ':so $VIMRUNTIME/syntax/hitest.vim'
-set statusline+=\ %c:%l/%L   " column number:line number/length of line
-set statusline+=\            " Space
+""""""""""\ Light Line Settings /"""""""""""""""""
+set noshowmode "get rid of the "-- INSERT --" at the bottom as it is a part of the plugin
+let g:lightline = {
+    \ 'colorscheme': 'jellybeans',
+    \ }
+
+""""""""""\ Status Line Settings /""""""""""""""""
+" set statusline=              " start the status line
+" set statusline+=%#DiffChange#  " the green color
+" set statusline+=\ %M         " modified since last save
+" set statusline+=\ %y         " type of file in []
+" set statusline+=\            " another space at the end
+" " set statusline+=\ %r       " read only flag -- adds a space I do not like
+" set statusline+=%#WildMenu# " the orange color
+" set statusline+=\            " Space
+" set statusline+=\%f          " relative path to file
+" " set statusline+=\%F          " full path to file
+" set statusline+=\            " Space
+" set statusline+=%#DiffChange#  " the green color
+
+" "" The Right Side
+" set statusline+=%=           " right side settings
+" set statusline+=%#WildMenu#   " the orange color -- use ':so $VIMRUNTIME/syntax/hitest.vim'
+" set statusline+=\ %c:%l/%L   " column number:line number/length of line
+" set statusline+=\            " Space
 
 """"""""""\ Indentation Settings /""""""""""""""""
 set expandtab
@@ -101,3 +109,20 @@ imap <C-s> <Esc> :w <CR> i
 "I sure hope this works :(((((
 let g:livepreview_previewer = 'zathura'
 " Yay it works
+
+""""""""""\ WSL Clipboard Support /""""""""""""""
+set clipboard+=unnamedplus
+let g:clipboard = {
+    \   'name': 'win32yank-wsl',
+    \   'copy': {
+    \       '+': 'win32yank.exe -i --crlf',
+    \       '*': 'win32yank.exe -i --crlf',
+    \   },
+    \   'paste': {
+    \       '+': 'win32yank.exe -o --lf',
+    \       '*': 'win32yank.exe -o --lf',
+    \   },
+    \   'cashe_enabled': 0,
+    \ }
+" woah it totally works!!
+" see https://superuser.com/questions/1291425/windows-subsystem-linux-make-vim-use-the-clipboard for more info
