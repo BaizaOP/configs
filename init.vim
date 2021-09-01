@@ -34,8 +34,9 @@ call plug#begin(stdpath('data') . './plugged')
 Plug 'tpope/vim-commentary'
 Plug 'nanotech/jellybeans.vim'
 Plug 'markvincze/panda-vim'
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+" Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'itchyny/lightline.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 call plug#end()
 

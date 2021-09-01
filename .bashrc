@@ -3,6 +3,9 @@
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source "${GITAWAREPROMPT}/main.sh"
 
+# add a path for the go binaries
+export PATH=$PATH:/usr/local/go/bin
+
 # tab complete in shell forwards with 'tab' and backwards with 'shift-tab'
 bind 'TAB':menu-complete
 bind '"\e[Z":menu-complete-backward'
@@ -10,6 +13,11 @@ bind '"\e[Z":menu-complete-backward'
 # source a .bash_aliases file if there is one
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
+fi
+
+# same with ls an ls colors file
+if [ -f ~/.ls_colors ]; then
+    . ~/.ls_colors
 fi
 
 ######## UBUNTU DEFAULT OPTIONS ########
@@ -96,4 +104,7 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 ######## END OF UBUNTU DEFAULT OPTIONS ########
 
-
+####### SET UP PULSEAUDIO ########
+export HOST_IP="$(ip route |awk '/^default/{print $3}')"
+export PULSE_SERVER="tcp:$HOST_IP"
+#export DISPLAY="$HOST_IP:0.0"
