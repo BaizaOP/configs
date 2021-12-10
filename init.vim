@@ -1,5 +1,9 @@
-""""""""""\ Pretty much universal settings /""""""
-set nocompatible " disables some vi things which makes vim more 'fully funcitoned'
+"""""""""\ Sourcing Files /""""""""""""""""""""""
+" so C:\users\zaynb\Desktop\Coding\ghrepos\myconfigs\coc-config.vim
+
+"""""""""\ Pretty much universal settings /""""""
+" set nocompatible " disables some vi things which makes vim more 'fully funcitoned'
+" the above is only needed for vim, neovim is nocompatible by default
 set number " line numbers
 set relativenumber " relative time numbers
 set laststatus=2 " window will always have status bar
@@ -15,6 +19,8 @@ let @/="" " get rid of the stupid higlighting after searching
 set autowrite " auto save when use make command and other commands
 set splitright " new vertical splits open right to the current window
 set splitbelow " new (horizontal) splits open below to the current window
+set termguicolors " allows for fancy smancy terminal colors
+set makeprg=mingw32-make
 
 """"""""""\ Disable arrow keys /""""""""""""""""""
 " Do this in normal mode...
@@ -29,26 +35,45 @@ inoremap <Up>    <ESC>:echoe "Use k"<CR>
 inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
 """"""""""\ Vim Plug /""""""""""""""""""""""""""""
-call plug#begin(stdpath('data') . './plugged')
+call plug#begin(stdpath('data') . '\plugged')
 
 Plug 'tpope/vim-commentary'
-Plug 'nanotech/jellybeans.vim'
-Plug 'markvincze/panda-vim'
-" Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'itchyny/lightline.vim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'jiangmiao/auto-pairs'
+
+" colors
+Plug 'nanotech/jellybeans.vim'
+Plug 'sjl/badwolf'
+Plug 'jacoborus/tender.vim'
+Plug 'tomasr/molokai'
+" Plug '844196/lightline-badwolf.vim' -- badwolf for lightline
+" Plug 'markvincze/panda-vim'
+" Plug 'chriskempson/base16-vim' -- too many choices, will never be able to choose!!!!
+
+" markdown and latex tinkering 
+" Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+" Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+
+" feels like too much lol
+" Plug 'Yggdroot/indentLine'
+" Plug 'sheerun/vim-polyglot'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'mattn/emmet-vim'
 
 call plug#end()
 
 " color panda " best color pallate EVER
 " NOT ANYMORE LOL
-color jellybeans
+color molokai
 
 """"""""""\ Light Line Settings /"""""""""""""""""
 set noshowmode "get rid of the "-- INSERT --" at the bottom as it is a part of the plugin
 let g:lightline = {
-    \ 'colorscheme': 'jellybeans',
+    \ 'colorscheme': 'molokai',
     \ }
+" let g:lightline = {
+"       \ 'colorscheme': 'badwolf',
+"       \ }
 
 """"""""""\ Status Line Settings /""""""""""""""""
 " set statusline=              " start the status line
@@ -91,6 +116,8 @@ nnoremap <Leader>j <C-W>j
 nnoremap <Leader>h <C-W>h
 map <C-s> :w <CR>
 imap <C-s> <Esc> :w <CR> i
+vnoremap < <gv
+vnoremap > >gv
 
 """"""""""\ Latex in Vim Stuffs /""""""""""""""""
 " I hate this plugin lmao
