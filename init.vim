@@ -42,10 +42,15 @@ Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 
 " colors
-Plug 'nanotech/jellybeans.vim'
-Plug 'sjl/badwolf'
-Plug 'jacoborus/tender.vim'
+" Plug 'nanotech/jellybeans.vim'
+" Plug 'sjl/badwolf'
+" Plug 'jacoborus/tender.vim'
 Plug 'tomasr/molokai'
+Plug 'croaker/mustang-vim'
+" Plug 'jpo/vim-railscasts-theme'
+Plug 'tpope/vim-vividchalk'
+Plug 'ciaranm/inkpot'
+Plug 'shapeoflambda/dark-purple.vim'
 " Plug '844196/lightline-badwolf.vim' -- badwolf for lightline
 " Plug 'markvincze/panda-vim'
 " Plug 'chriskempson/base16-vim' -- too many choices, will never be able to choose!!!!
@@ -64,17 +69,31 @@ call plug#end()
 
 " color panda " best color pallate EVER
 " NOT ANYMORE LOL
-color molokai
+color dark_purple
 
 """"""""""\ Light Line Settings /"""""""""""""""""
-set noshowmode "get rid of the "-- INSERT --" at the bottom as it is a part of the plugin
-let g:lightline = {
-    \ 'colorscheme': 'molokai',
-    \ }
+" set noshowmode "get rid of the "-- INSERT --" at the bottom as it is a part of the plugin
+" let g:lightline = {
+"     \ 'colorscheme': 'dark_purple',
+"     \ }
 " let g:lightline = {
 "       \ 'colorscheme': 'badwolf',
 "       \ }
-
+set laststatus=2
+let g:lightline = {
+      \ 'colorscheme': 'dark_purple',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             ['readonly', 'filename', 'modified' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'filetype' ],
+      \              [ 'gitbranch'] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
+colorscheme dark_purple
 """"""""""\ Status Line Settings /""""""""""""""""
 " set statusline=              " start the status line
 " set statusline+=%#DiffChange#  " the green color
@@ -135,22 +154,24 @@ vnoremap > >gv
 
 """"""""""\ Vim Latex Live Preview /"""""""""""""
 "I sure hope this works :(((((
-let g:livepreview_previewer = 'zathura'
+"let g:livepreview_previewer = 'zathura'
 " Yay it works
 
 """"""""""\ WSL Clipboard Support /""""""""""""""
-set clipboard+=unnamedplus
-let g:clipboard = {
-    \   'name': 'win32yank-wsl',
-    \   'copy': {
-    \       '+': 'win32yank.exe -i --crlf',
-    \       '*': 'win32yank.exe -i --crlf',
-    \   },
-    \   'paste': {
-    \       '+': 'win32yank.exe -o --lf',
-    \       '*': 'win32yank.exe -o --lf',
-    \   },
-    \   'cashe_enabled': 0,
-    \ }
+if has('wsl')
+    set clipboard+=unnamedplus
+    let g:clipboard = {
+        \   'name': 'win32yank-wsl',
+        \   'copy': {
+        \       '+': 'win32yank.exe -i --crlf',
+        \       '*': 'win32yank.exe -i --crlf',
+        \   },
+        \   'paste': {
+        \       '+': 'win32yank.exe -o --lf',
+        \       '*': 'win32yank.exe -o --lf',
+        \   },
+        \   'cashe_enabled': 0,
+        \ }
+endif
 " woah it totally works!!
 " see https://superuser.com/questions/1291425/windows-subsystem-linux-make-vim-use-the-clipboard for more info
