@@ -180,7 +180,7 @@ cursor:
 live_config_reload: true
 
 shell:
-  program: cmd.exe
+  program: powershell.exe
   #args:
   #  - /c call wsl
 working_directory: None
