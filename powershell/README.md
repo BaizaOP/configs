@@ -50,7 +50,6 @@ Install-Module posh-git -Scope CurrentUser -Force; Install-Module oh-my-posh -Sc
 9. To get Terminal Icons, run
 ```Powershell
 Install-Module -Name Terminal-Icons -Repository -Force
-Import-Module Terminal-Icons
 ```
 10. To get z (a smarter cd command), run
 ```Powershell
