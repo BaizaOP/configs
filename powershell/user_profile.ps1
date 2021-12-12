@@ -1,3 +1,8 @@
+# Prompt
+Import-Module posh-git
+Import-Module oh-my-posh
+Set-PoshPrompt pure
+
 # Alias
 Set-Alias ll ls
 Set-Alias g git

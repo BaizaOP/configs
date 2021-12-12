@@ -28,3 +28,8 @@ New-Item -Path $Home\.config\powershell\user_profile.ps1 -Type SymbolicLink -Tar
 6. Copy the `Microsoft.PowerShell_profile.ps1` file to where `$PROFILE.CurrentUserCurrentHost` is (no symlink needed as this won't change)
 You may need to reload again to see changes.
 
+### Step 4. Oh-My-Posh + Posh-Git
+7. To install both, just run
+```Powershell
+Install-Module posh-git -Scope CurrentUser -Force; Install-Module oh-my-posh -Scopre CurrentUser -Force
+```
