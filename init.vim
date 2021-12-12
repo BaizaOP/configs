@@ -25,6 +25,7 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'tomasr/molokai'
 Plug 'shapeoflambda/dark-purple.vim'
+Plug 'drewtempelmeyer/palenight.vim'
 
 call plug#end()
 
