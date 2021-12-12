@@ -1,0 +1,9 @@
+git
+neovim
+llvm
+cmake
+python
+curl
+go
+fzf
+jq
