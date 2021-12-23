@@ -18,7 +18,7 @@ if($has_cur_deps -ne $false) {
     foreach ($new in $new_deps_list) {
         $in = $false
             foreach ($cur in $cur_deps_list) {
-                echo ($cur + " " + $new)
+                # echo ($cur + " " + $new)
                 if($new -eq $cur) {
                     $in = $true
                 }
