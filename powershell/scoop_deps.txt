@@ -1,6 +1,4 @@
-git
 neovim
-llvm
 cmake
 python
-fzf
+gcc
