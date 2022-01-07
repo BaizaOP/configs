@@ -1,7 +1,7 @@
-# Prompt
-Import-Module posh-git
-Import-Module oh-my-posh
-Set-PoshPrompt pure
+# Prompt takes a LONG time, maybe we can do in pure ps1?
+# Import-Module posh-git
+# Import-Module oh-my-posh
+# Set-PoshPrompt pure
 
 # Icons
 Import-Module -Name Terminal-Icons
