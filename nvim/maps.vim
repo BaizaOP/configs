@@ -35,3 +35,7 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 nnoremap  <Leader>t  :FloatermToggle<CR>
 inoremap  <Leader>t  <Esc>:FloatermToggle<CR>
 tnoremap  <Esc>  <C-\><C-n>:FloatermToggle<CR>
+
+" Easier tab movement
+nnoremap <TAB>  :tabn<CR>
+nnoremap <S-TAB> :tabp<CR>
