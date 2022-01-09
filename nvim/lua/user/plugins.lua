@@ -37,19 +37,34 @@ packer.init {
     end,
   },
 }
-
 return packer.startup(function(use)
   -- Plugins here!
-  use "wbthomason/packer.nvim" -- have packer manage itself
-  use "nvim-lua/popup.nvim"    -- an implementation of the popup api from vim in neovim
-  use "nvim-lua/plenary.nvim"  -- useful lua functions used by lots of plugins
+  use "wbthomason/packer.nvim"                      -- have packer manage itself
+  use "nvim-lua/popup.nvim"                         -- an implementation of the popup api from vim in neovim
+  use "nvim-lua/plenary.nvim"                       -- useful lua functions used by lots of plugins
 
   -- much colors
-  use "cocopon/iceberg.vim"
-  use "NLKNguyen/papercolor-theme"
+  --use "cocopon/iceberg.vim"
+  --use "NLKNguyen/papercolor-theme"
   use "easysid/mod8.vim"
-  use "agude/vim-eldar"
- 
+  --use "agude/vim-eldar"
+
+  -- cmp plugins
+  use "hrsh7th/nvim-cmp"                            -- the completion plugin
+  use "hrsh7th/cmp-buffer"                          -- buffer completions
+  use "hrsh7th/cmp-path"                            -- path completions
+  use "hrsh7th/cmp-cmdline"                         -- cmdline completions
+  use "saadparwaiz1/cmp_luasnip"                    -- snippet completions
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lua"
+  
+  -- snippets
+  use "L3MON4D3/LuaSnip"                            -- snippet engine
+  use "rafamadriz/friendly-snippets"                -- a bunch of snippets to use
+
+  -- LSP
+  use "neovim/nvim-lspconfig"                       -- enable LSP
+  use "williamboman/nvim-lsp-installer"             -- simple to use language server installer
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
