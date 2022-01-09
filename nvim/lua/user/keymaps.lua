@@ -27,22 +27,20 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<S-k>", ":bnext<CR>", opts)                       -- Navigate buffers
 keymap("n", "<S-l>", ":bprevious<CR>", opts)
 
+vim.cmd [[ nnoremap <A-j> :m .+1<CR>== ]]
+vim.cmd [[ nnoremap <A-k> :m .-2<CR>== ]]
+
 -- INSERT MODE keymaps --
 keymap("i", "jk", "<ESC>", opts)
+vim.cmd [[ inoremap <A-j> <Esc>:m .+1<CR>==gi ]]
+vim.cmd [[ inoremap <A-k> <Esc>:m .-2<CR>==gi ]]
 
 -- VISUAL MODE keymaps --
 keymap("v", "<", "<gv", opts)                                  -- stay in indent mode
 keymap("v", ">", ">gv", opts)
-
-keymap("v", "<A-j>", ":move .+1<CR>", opts)                    -- move text in insert mode
-keymap("v", "<A-k>", ":move .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)                                 -- pasting will not save the pasted text, but the initial text
-
--- VISUAL BLOCK MODE keymaps --
-keymap("x", "<J>", ":m >+1<CR>gv-gv", opts)                    -- move text in insert mode
-keymap("x", "<K>", ":m <-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":m >+1<CR>gv-gv", opts)                    
-keymap("x", "<A-k>", ":m <-2<CR>gv-gv", opts)
+vim.cmd [[ vnoremap <A-j> :m '>+1<CR>gv=gv ]]
+vim.cmd [[ vnoremap <A-k> :m '<-2<CR>gv=gv ]]
 
 -- TERMINAL better keymaps --
 keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
