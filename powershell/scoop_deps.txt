@@ -2,3 +2,4 @@ neovim
 cmake
 python
 gcc
+nvm
