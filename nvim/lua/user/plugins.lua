@@ -33,7 +33,7 @@ end
 packer.init {
   display = {
     open_fn = function()
-      return require("packer.util").float {border = "rounded"} 
+      return require("packer.util").float {border = "rounded"}
     end,
   },
 }
@@ -57,7 +57,7 @@ return packer.startup(function(use)
   use "saadparwaiz1/cmp_luasnip"                    -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
-  
+
   -- snippets
   use "L3MON4D3/LuaSnip"                            -- snippet engine
   use "rafamadriz/friendly-snippets"                -- a bunch of snippets to use
@@ -65,6 +65,9 @@ return packer.startup(function(use)
   -- LSP
   use "neovim/nvim-lspconfig"                       -- enable LSP
   use "williamboman/nvim-lsp-installer"             -- simple to use language server installer
+
+  -- Telescope
+  use "nvim-telescope/telescope.nvim"
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

@@ -30,6 +30,11 @@ keymap("n", "<S-l>", ":bprevious<CR>", opts)
 vim.cmd [[ nnoremap <A-j> :m .+1<CR>== ]]
 vim.cmd [[ nnoremap <A-k> :m .-2<CR>== ]]
 
+-- telescope keymaps
+-- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+
 -- INSERT MODE keymaps --
 keymap("i", "jk", "<ESC>", opts)
 vim.cmd [[ inoremap <A-j> <Esc>:m .+1<CR>==gi ]]
