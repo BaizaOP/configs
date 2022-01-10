@@ -48,13 +48,13 @@ local kind_icons = {
 
 cmp.setup {
 -- bring back once we get treesitter
---  enabled = function()
---      if require"cmp.config.context".in_treesitter_capture("comment")==true or require"cmp.config.context".in_syntax_group("Comment") then
---        return false
---      else
---        return true
---      end
---  end,
+  enabled = function()
+      if require"cmp.config.context".in_treesitter_capture("comment")==true or require"cmp.config.context".in_syntax_group("Comment") then
+        return false
+      else
+        return true
+      end
+  end,
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
