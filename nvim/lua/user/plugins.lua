@@ -42,6 +42,7 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim"                      -- have packer manage itself
   use "nvim-lua/popup.nvim"                         -- an implementation of the popup api from vim in neovim
   use "nvim-lua/plenary.nvim"                       -- useful lua functions used by lots of plugins
+  use "windwp/nvim-autopairs"
 
   -- much colors
   --use "cocopon/iceberg.vim"
@@ -74,6 +75,10 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
+
+  -- Comment plugins
+  use "numToStr/Comment.nvim"
+  use "JoosepAlviste/nvim-ts-context-commentstring"
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
