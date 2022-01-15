@@ -4,3 +4,4 @@ python
 gcc
 nvm
 ripgrep
+uncrustify
