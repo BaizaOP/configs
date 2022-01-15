@@ -42,7 +42,6 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim"                      -- have packer manage itself
   use "nvim-lua/popup.nvim"                         -- an implementation of the popup api from vim in neovim
   use "nvim-lua/plenary.nvim"                       -- useful lua functions used by lots of plugins
-  use "windwp/nvim-autopairs"
 
   -- much colors
   --use "cocopon/iceberg.vim"
@@ -86,6 +85,13 @@ return packer.startup(function(use)
   -- Nvim Tree
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
+
+  -- Autopairs
+  use "windwp/nvim-autopairs"
+
+  -- Bufferline
+  use 'akinsho/bufferline.nvim'
+  use 'moll/vim-bbye'
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

@@ -24,8 +24,8 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
-keymap("n", "<S-k>", ":bnext<CR>", opts)                       -- Navigate buffers
-keymap("n", "<S-l>", ":bprevious<CR>", opts)
+keymap("n", "<S-l>", ":bnext<CR>", opts)                       -- Navigate buffers
+keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 vim.cmd [[ nnoremap <A-j> :m .+1<CR>== ]]
 vim.cmd [[ nnoremap <A-k> :m .-2<CR>== ]]

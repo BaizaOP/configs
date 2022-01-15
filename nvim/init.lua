@@ -1,4 +1,5 @@
 require "user.autopairs"
+require "user.bufferline"
 require "user.cmp"
 require "user.colorscheme"
 require "user.comment"
