@@ -5,3 +5,4 @@ gcc
 nvm
 ripgrep
 uncrustify
+llvm
