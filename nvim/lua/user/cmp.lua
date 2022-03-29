@@ -134,7 +134,7 @@ cmp.setup {
     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
   },
   experimental = {
-    ghost_text = true, -- this makes the "virtual text" trying to complete the words for you
+    ghost_text = false, -- this makes the "virtual text" trying to complete the words for you
     native_menu = false,
   },
 }

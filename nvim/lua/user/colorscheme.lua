@@ -1,4 +1,4 @@
-local colorscheme = "mod8"
+local colorscheme = "hybrid"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 

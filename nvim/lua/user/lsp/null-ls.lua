@@ -10,6 +10,8 @@ null_ls.setup({
   debug = false,
   sources = {
     formatting.yapf,
+    formatting.prettier,
     diagnostics.flake8,
   }
 })
+

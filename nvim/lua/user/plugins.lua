@@ -47,6 +47,7 @@ return packer.startup(function(use)
   --use "cocopon/iceberg.vim"
   --use "NLKNguyen/papercolor-theme"
   use "easysid/mod8.vim"
+  use "w0ng/vim-hybrid"
   --use "agude/vim-eldar"
 
   -- cmp plugins
