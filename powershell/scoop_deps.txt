@@ -6,3 +6,6 @@ nvm
 ripgrep
 uncrustify
 llvm
+treesize-free
+powertools
+ppsspp
