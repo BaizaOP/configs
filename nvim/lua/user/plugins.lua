@@ -15,7 +15,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
--- Autocommand that reloads neovim wheneverr you sae the plugins.lua file
+-- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.cmd [[
   augroup packer_user_config
     autocmd!
@@ -71,14 +71,15 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope.nvim"
 
   -- Treesitter
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  }
+  --use {
+  --  "nvim-treesitter/nvim-treesitter",
+  -- run = ":TSUpdate",
+  --}
 
   -- Comment plugins
-  use "numToStr/Comment.nvim"
-  use "JoosepAlviste/nvim-ts-context-commentstring"
+  --use "numToStr/Comment.nvim"
+  --use "JoosepAlviste/nvim-ts-context-commentstring"
+  use "tpope/vim-commentary"
 
   -- Git
   use "lewis6991/gitsigns.nvim"
@@ -96,6 +97,9 @@ return packer.startup(function(use)
 
   -- Null-LS
   use "jose-elias-alvarez/null-ls.nvim"
+
+  -- LuaLine
+  use "nvim-lualine/lualine.nvim"
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

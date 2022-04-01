@@ -9,6 +9,7 @@ if not snip_status_ok then
 end
 
 require("luasnip/loaders/from_vscode").lazy_load()
+require("luasnip.loaders.from_snipmate").lazy_load()
 
 --: we dont really need to know what this means, just that it helps the cmp work!
 local check_backspace = function()
@@ -48,13 +49,13 @@ local kind_icons = {
 
 cmp.setup {
 -- bring back once we get treesitter
-  enabled = function()
-      if require"cmp.config.context".in_treesitter_capture("comment")==true or require"cmp.config.context".in_syntax_group("Comment") then
-        return false
-      else
-        return true
-      end
-  end,
+  --enabled = function()
+  --   if require"cmp.config.context".in_treesitter_capture("comment")==true or require"cmp.config.context".in_syntax_group("Comment") then
+ --       return false
+   --   else
+    --    return true
+    --  end
+  --end,
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
